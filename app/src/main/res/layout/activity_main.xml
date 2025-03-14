@@ -12,10 +12,23 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/app_version"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FF0000"
+            android:textSize="24sp"
+            android:visibility="visible" />
+
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
@@ -28,15 +41,5 @@
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
         app:srcCompat="@android:drawable/ic_dialog_email" />
-
-    <TextView
-        android:id="@+id/textView_ver"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:rotation="-32"
-        android:text="@string/app_version"
-        android:textAlignment="center"
-        android:textColor="#811414"
-        android:textSize="24sp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -11,19 +11,25 @@ android {
         applicationId = "com.bmwgroup.oneupdatesmalltest"
         minSdk = 31
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = rootProject.extra["defaultVersionName"] as String
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        val pref = "Version "
+        debug {
+            versionNameSuffix  = ".debug"
+            resValue ("string", "app_version","${pref}${defaultConfig.versionName}${versionNameSuffix}")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            resValue ("string", "app_version", "${pref}${defaultConfig.versionName}")
         }
     }
     compileOptions {
@@ -35,6 +41,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
