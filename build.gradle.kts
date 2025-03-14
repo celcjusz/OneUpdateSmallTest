@@ -3,3 +3,4 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
 }
+val defaultVersionName by extra("2.0.0")
